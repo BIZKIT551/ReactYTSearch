@@ -1,8 +1,15 @@
 import React from "react";
-import { ProgressPlugin } from "webpack";
+import VideoListItem from "./Video_list_item";
 
-const VideoList = () => {
-  return <ul className="col-md-4 list-group">{props.videos.length}</ul>;
+const VideoList = (props) => {
+    const videoItems = props.videos.map((video)=>{
+        return <VideoListItem video={video} />
+    });
+  return(
+    <ul className="col-md-4 list-group">
+    {videoItems}
+    </ul>
+  );
 };
 
 export default VideoList;
